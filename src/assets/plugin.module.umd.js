@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
     typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
-    (factory((global.app = global.app || {}, global.app.plugin = {}),global.i0));
+    (factory((global.plugin = {}),global.i0));
 }(this, (function (exports,i0) { 'use strict';
 
     /**
