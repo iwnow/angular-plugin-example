@@ -29,10 +29,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "lazyModules": [
-              "src/plugin/plugin.module"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
