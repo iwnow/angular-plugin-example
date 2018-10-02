@@ -29,7 +29,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "lazyModules": [
+              "src/plugin/plugin.module"
+            ]
           },
           "configurations": {
             "production": {
@@ -120,6 +123,45 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "plugin": {
+      "root": "projects/plugin",
+      "sourceRoot": "projects/plugin/src",
+      "projectType": "library",
+      "prefix": "plugin",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/plugin/tsconfig.lib.json",
+            "project": "projects/plugin/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/plugin/src/test.ts",
+            "tsConfig": "projects/plugin/tsconfig.spec.json",
+            "karmaConfig": "projects/plugin/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/plugin/tsconfig.lib.json",
+              "projects/plugin/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

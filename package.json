@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run build && ng serve",
+    "build": "ng build plugin && npm run build:umd",
+    "build:umd": "rollup dist/plugin/esm2015/lib/plugin.module.ngfactory.js --file src/assets/plugin.module.umd.js --format umd --name 'app.plugin'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.9.0-beta.1",
+    "@angular-devkit/build-ng-packagr": "~0.9.0-beta.1",
     "@angular/cli": "~7.0.0-beta.4",
     "@angular/compiler-cli": "~7.0.0-beta.5",
     "@angular/language-service": "~7.0.0-beta.5",
@@ -40,8 +42,12 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
+    "rollup": "^0.66.2",
     "ts-node": "~7.0.0",
+    "tsickle": ">=0.29.0",
+    "tslib": "^1.9.0",
     "tslint": "~5.11.0",
     "typescript": "~3.0.1"
   }
