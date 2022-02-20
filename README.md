@@ -15,3 +15,8 @@ npm start
 
 # Update
 [Please see more elegant approach building pluggable angular architecture](https://medium.com/angular-in-depth/building-extensible-dynamic-pluggable-enterprise-application-with-angular-aed8979faba5)
+
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/iwnow/angular-plugin-example.svg)](https://starchart.cc/iwnow/angular-plugin-example)
